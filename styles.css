@@ -33,7 +33,7 @@
 .mmc-warnings summary { cursor: pointer; }
 .mmc-warnings p { margin: 4px 0; }
 .mmc-error { color: var(--text-error); }
-.mmc-board { --mmc-single-column: 0; display: grid; flex: 1; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: minmax(48px, auto); column-gap: 28px; align-items: stretch; }
+.mmc-board { --mmc-single-column: 0; display: grid; flex: 1; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: minmax(48px, auto); gap: 0 28px; align-items: stretch; }
 .mmc-day { grid-column: var(--mmc-column); grid-row: var(--mmc-row); display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 10px; padding: 8px; min-width: 0; align-items: start; cursor: pointer; }
 .mmc-day:hover { background: var(--background-modifier-hover); }
 .mmc-day.is-week-end .mmc-date::after { content: ''; position: absolute; left: 50%; bottom: -4px; width: 100%; transform: translateX(-50%); border-bottom: 2px solid var(--interactive-accent); pointer-events: none; }
@@ -64,7 +64,7 @@
   .mmc-controls { gap: 6px; }
   .mmc-controls button, .mmc-controls input { min-height: 44px; }
   .mmc-controls input[type="month"] { width: 140px; }
-  .mmc-board { --mmc-single-column: 1; grid-template-columns: minmax(0, 1fr); grid-auto-rows: minmax(60px, auto); column-gap: 0; }
+  .mmc-board { --mmc-single-column: 1; grid-template-columns: minmax(0, 1fr); grid-auto-rows: minmax(60px, auto); gap: 0; }
   .mmc-day { grid-column: 1; grid-row: auto; grid-template-columns: 28px minmax(0, 1fr); gap: 12px; padding: 8px; }
   .mmc-day-content { font-size: 14px; }
   .mmc-view .mmc-empty-day { min-height: 44px; }

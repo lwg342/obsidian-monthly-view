@@ -1,5 +1,34 @@
 # Monthly Markdown Calendar
 
+A lightweight, offline monthly calendar for Obsidian. Each month is a single local Markdown file. The desktop view shows days 1–15 on the left and the rest on the right; phone-sized panels show one chronological column. Click a date to edit its content in the native Markdown editor.
+
+## Installation
+
+Download `main.js`, `manifest.json`, and `styles.css` from the [latest release](https://github.com/lwg342/obsidian-monthly-view/releases/latest). Create `.obsidian/plugins/monthly-markdown-calendar/` inside your vault and place the three files directly in that folder. Reload Obsidian, enable **Monthly Markdown Calendar** under Settings → Community plugins, and run its **打开月度日历** (Open monthly calendar) command. The ribbon calendar icon opens the same view.
+
+The [community listing](https://community.obsidian.md/plugins/monthly-markdown-calendar) is undergoing automated review. Availability in the in-app directory depends on that review.
+
+## Usage
+
+- By default, monthly notes live at `Calendar/YYYY-MM.md`. Change the folder in the plugin settings if needed.
+- Start each day with a level-two date heading such as `## 2026-11-07`. Add paragraphs, lists, links, and tasks below it. See the [example month](examples/Calendar/2026-11.md).
+- Click a date or its `+` button to open the native editor at that date. Missing files and sections offer an explicit creation dialog; existing content is never overwritten.
+- Use the previous month, next month, month picker, and current month controls to navigate. Phone-sized views scroll to today when opening the current month; ordinary refreshes preserve your position.
+- Edits made in the native editor automatically refresh the calendar. Task checkboxes are read-only in the calendar; edit them in the note.
+- To uninstall, disable and remove the plugin in Community plugins. Your Markdown notes remain in the vault.
+
+## Privacy and compatibility
+
+No accounts, network requests, telemetry, ads, background sync, self-updates, or files outside the vault are used by this plugin. It reads only the selected monthly file. Embedded media is displayed as links rather than fetched in the calendar. Clicking an external link is an explicit user action.
+
+Requires Obsidian 1.7.2 or later. The interface currently uses Chinese labels. Mobile layouts have been checked at narrow desktop viewports; physical iOS and Android devices have not been tested. This is an independent community project, not an official Obsidian product.
+
+## Development
+
+Use Node.js 24, run `npm ci`, then `npm run check` for the official recommended lint rules, API type checking, 20 tests, and the production build. `npm run preview` opens a simulated host for local UI development. The [review notes](docs/community-review.md) and [test report](docs/testing.md) describe the validation scope.
+
+## 中文说明
+
 一个轻量的 Obsidian 月历。桌面左侧为 1–15 日，右侧为 16 日至月底；手机和窄面板自动按日期显示单列。数据保存在普通 Markdown 文件中，点击日期使用 Obsidian 原生编辑器。
 
 ## 文件格式

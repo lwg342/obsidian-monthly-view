@@ -17,3 +17,12 @@ and `eslint-plugin-obsidianmd` recommended rules on 2026-11-07.
 - Minimum version remains 1.7.2 based on runtime APIs; mobile layout was tested with narrow desktop viewports, not physical devices.
 
 The official directory scanner and review are separate from these local checks.
+
+## Directory feedback — 0.1.6
+
+The initial submission was accepted and published on 2026-11-07. Automated
+review identified missing English README sections and recommended release
+asset attestations. Added English installation, usage and privacy guidance,
+and GitHub build attestations. Replaced CSS grid column-gap with equivalent
+gap syntax to avoid the scanner's multicolumn-compatibility warning.
+Review completion remains controlled by the community directory.
