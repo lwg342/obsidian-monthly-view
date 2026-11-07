@@ -113,3 +113,7 @@ npm run preview
 - `styles.css` 插件样式，限定在插件类名中。
 - `tests/` 解析测试、Obsidian 宿主模拟和浏览器预览。
 - `dist/` 可安装文件与发布压缩包。
+
+## License
+
+[MIT](LICENSE) © 2026 Weiguang Liu.

@@ -6,8 +6,8 @@ export default class MonthlyCalendarPlugin extends Plugin {
   folder = 'Calendar';
 
   async onload(): Promise<void> {
-    const saved = await this.loadData();
-    try { if (typeof saved?.folder === 'string') this.folder = normalizeFolder(saved.folder); }
+    const saved: unknown = await this.loadData();
+    try { if (saved && typeof saved === 'object' && 'folder' in saved && typeof saved.folder === 'string') this.folder = normalizeFolder(saved.folder); }
     catch { new Notice('月度日历的文件夹设置无效，暂时使用 Calendar。'); }
     this.registerView(VIEW_TYPE, leaf => new MonthlyView(leaf, () => this.folder));
     this.addCommand({ id: 'open-monthly-calendar', name: '打开月度日历', callback: () => { void this.openCalendar().catch(error => new Notice(String(error))); } });
@@ -40,10 +40,23 @@ export default class MonthlyCalendarPlugin extends Plugin {
 class CalendarSettings extends PluginSettingTab {
   constructor(app: App, private calendar: MonthlyCalendarPlugin) { super(app, calendar); }
 
+  // Newer hosts index these definitions; older hosts use display().
+  getSettingDefinitions() {
+    return [{
+      name: '月份文件夹',
+      desc: '每月读取此目录下的 YYYY-MM.md。',
+      render: (setting: Setting) => this.renderFolderSetting(setting),
+    }];
+  }
+
   display(): void {
     this.containerEl.empty();
+    this.renderFolderSetting(new Setting(this.containerEl));
+  }
+
+  private renderFolderSetting(setting: Setting): void {
     let draft = this.calendar.folder;
-    new Setting(this.containerEl)
+    setting
       .setName('月份文件夹')
       .setDesc('相对于 vault 根目录。每月只读取此目录下的 YYYY-MM.md。留空使用根目录；保存设置不会创建文件或移动笔记。')
       .addText(input => input.setPlaceholder('Calendar').setValue(draft).onChange(value => { draft = value; }))

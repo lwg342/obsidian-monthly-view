@@ -46,7 +46,7 @@ export class MonthlyView extends ItemView {
   private ready = false;
   private revision = 0;
   private renderOwner: Component | null = null;
-  private refreshTimer: ReturnType<typeof setTimeout> | null = null;
+  private refreshTimer: number | null = null;
   private titleEl!: HTMLElement;
   private monthInput!: HTMLInputElement;
   private sourceEl!: HTMLElement;
@@ -181,8 +181,8 @@ export class MonthlyView extends ItemView {
   scheduleRefresh(): void {
     // Invalidate pending I/O immediately so an old read cannot replace newer content.
     this.revision++;
-    if (this.refreshTimer !== null) clearTimeout(this.refreshTimer);
-    this.refreshTimer = setTimeout(() => {
+    if (this.refreshTimer !== null) window.clearTimeout(this.refreshTimer);
+    this.refreshTimer = window.setTimeout(() => {
       this.refreshTimer = null;
       void this.refresh();
     }, 120);
@@ -375,7 +375,7 @@ export class MonthlyView extends ItemView {
   async onClose(): Promise<void> {
     this.ready = false;
     this.revision++;
-    if (this.refreshTimer !== null) clearTimeout(this.refreshTimer);
+    if (this.refreshTimer !== null) window.clearTimeout(this.refreshTimer);
     if (this.renderOwner) { this.removeChild(this.renderOwner); this.renderOwner = null; }
     this.liveBuffer = null;
     this.contentEl.replaceChildren();

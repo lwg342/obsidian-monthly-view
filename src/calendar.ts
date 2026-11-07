@@ -133,6 +133,7 @@ export function appendDay(source: string, month: string, day: number): string {
 export function normalizeFolder(value: string): string {
   const folder = value.trim().replace(/\\/g, '/').replace(/\/+$/, '');
   if (!folder) return '';
+  // eslint-disable-next-line no-control-regex -- Reject control characters in vault-relative paths.
   if (folder.startsWith('/') || folder.split('/').some(part => !part || part.startsWith('.') || /[:*?"<>|\u0000-\u001f]/.test(part))) {
     throw new Error('请输入 vault 内的普通文件夹，例如 Calendar 或 Notes/Calendar，不要使用绝对路径、隐藏目录或 ..。');
   }
