@@ -1,0 +1,55 @@
+{
+  "version": "0.1.4",
+  "host": "1.15.0 (installer 1.15.0)",
+  "scope": "Real desktop Obsidian with narrow viewport emulation; not a physical iOS/Android device",
+  "checks": [
+    {
+      "check": "desktop two columns, paired rows, no hint or empty status gap",
+      "passed": true
+    },
+    {
+      "check": "single column, date order, wrapping, auto today, refresh and reopen",
+      "width": 390,
+      "theme": "light",
+      "days": 30,
+      "scrollTop": 314,
+      "passed": true
+    },
+    {
+      "check": "single column, date order, wrapping, auto today, refresh and reopen",
+      "width": 390,
+      "theme": "dark",
+      "days": 30,
+      "scrollTop": 314,
+      "passed": true
+    },
+    {
+      "check": "single column, date order, wrapping, auto today, refresh and reopen",
+      "width": 320,
+      "theme": "light",
+      "days": 30,
+      "scrollTop": 365.5,
+      "passed": true
+    },
+    {
+      "check": "single column, date order, wrapping, auto today, refresh and reopen",
+      "width": 320,
+      "theme": "dark",
+      "days": 30,
+      "scrollTop": 365.5,
+      "passed": true
+    },
+    {
+      "check": "28/29/30/31 days, other-month top, this-month navigation",
+      "passed": true
+    },
+    {
+      "check": "No Markdown files created, removed, or changed",
+      "passed": true
+    },
+    {
+      "check": "No JavaScript errors captured",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+node_modules/
+main.js
+dist/
+.preview/
+.test-vault/
+.test-profile/
+*.log
+.DS_Store

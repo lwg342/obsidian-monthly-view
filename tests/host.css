@@ -1,0 +1,33 @@
+/* Approximation of Obsidian host variables, not a bundled theme or production CSS. */
+:root, .theme-light {
+  --background-primary: #fafafa; --background-secondary: #eeeeef; --text-normal: #26282c;
+  --text-muted: #686d74; --text-faint: #969aa0; --text-accent: #6552a0; --text-warning: #8a6518;
+  --text-error: #b52b2b; --background-modifier-border: #dfe1e3; --background-modifier-hover: #eeeeef;
+  --interactive-accent: #8072ad; --font-interface: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.theme-dark {
+  color-scheme: dark;
+  --background-primary: #202124; --background-secondary: #2c2e33; --text-normal: #e2e3e7;
+  --text-muted: #a4a6ad; --text-faint: #777b85; --text-accent: #c4b5ed; --text-warning: #d9b767;
+  --text-error: #f28282; --background-modifier-border: #3b3e45; --background-modifier-hover: #2a2c31;
+  --interactive-accent: #a798d0;
+}
+body { margin: 0; background: var(--background-secondary); color: var(--text-normal); font: 14px/1.5 var(--font-interface); }
+button { background: var(--background-primary); color: var(--text-normal); border: 1px solid var(--background-modifier-border); border-radius: 6px; padding: 5px 10px; font: inherit; cursor: pointer; }
+a { color: var(--text-accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.preview-banner { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 24px; color: var(--text-muted); font-size: 12px; }
+.preview-banner div { display: flex; gap: 7px; }
+.preview-banner button { font-size: 12px; }
+.workspace { display: flex; flex-direction: column; min-height: calc(100dvh - 96px); margin: 0 24px; background: var(--background-primary); border: 1px solid var(--background-modifier-border); border-radius: 9px; overflow: hidden; }
+.workspace-tab { flex-shrink: 0; height: 40px; display: flex; align-items: center; gap: 10px; padding: 0 25px; border-bottom: 1px solid var(--background-modifier-border); font-size: 12px; }
+#calendar { display: flex; flex: 1; }
+#calendar > .mmc-view { flex: 1; }
+.tab-note { color: var(--text-muted); margin-left: auto; }
+#opened { padding: 0 24px; font-size: 12px; color: var(--text-muted); }
+#editor { padding: 20px 24px; }
+#editor textarea { display: block; width: 100%; height: 240px; margin: 10px 0; padding: 12px; box-sizing: border-box; background: var(--background-primary); color: var(--text-normal); border: 1px solid var(--background-modifier-border); border-radius: 6px; }
+.modal-container { position: fixed; inset: 0; background: #0006; display: flex; align-items: center; justify-content: center; }
+.modal-content { background: var(--background-primary); border: 1px solid var(--background-modifier-border); border-radius: 12px; padding: 24px; width: min(480px, 85vw); }
+.modal-content h2 { margin-top: 0; }
+@media (max-width: 600px) { .preview-banner { flex-wrap: wrap; padding: 10px 12px; } .workspace { margin: 0 8px; } }

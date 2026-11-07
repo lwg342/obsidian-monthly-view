@@ -1,0 +1,9 @@
+{
+  "id": "monthly-markdown-calendar",
+  "name": "Monthly Markdown Calendar",
+  "version": "0.1.4",
+  "minAppVersion": "1.7.2",
+  "description": "A two-column month view backed by local Markdown. Edit every day in Obsidian's native editor.",
+  "author": "wl342",
+  "isDesktopOnly": false
+}

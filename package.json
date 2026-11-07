@@ -1,0 +1,23 @@
+{
+  "name": "obsidian-monthly-view",
+  "version": "0.1.4",
+  "private": true,
+  "description": "A local Markdown, two-column monthly calendar for Obsidian.",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/build.mjs --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "preview": "node scripts/preview.mjs",
+    "check": "npm run typecheck && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "esbuild": "^0.27.0",
+    "happy-dom": "^20.0.0",
+    "markdown-it": "^14.1.0",
+    "obsidian": "^1.8.7",
+    "tsx": "^4.20.0",
+    "typescript": "~5.9.3"
+  }
+}

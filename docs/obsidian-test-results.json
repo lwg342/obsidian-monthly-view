@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-07",
+  "version": "1.15.0 (installer 1.15.0)",
+  "vault": ".test-vault",
+  "checks": [
+    "Native Markdown editor opens at the selected date",
+    "Real editor-change event refreshes the calendar",
+    "Creating a missing day preserves unsaved content and is idempotent",
+    "Opening an existing month preserves its exact bytes",
+    "New month creation and leap-day editor navigation work in Obsidian",
+    "Month lengths and year transition work in the real view",
+    "Actual Obsidian window reload restores the calendar and selected month",
+    "No JavaScript errors captured by Obsidian"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "version": "0.1.1",
+  "viewports": [
+    {
+      "width": 1360,
+      "height": 1600,
+      "bottomGap": 0,
+      "scrollHeight": 1521,
+      "clientHeight": 1521,
+      "pairedRowsAligned": true,
+      "contentTruncated": false,
+      "onlyPlus": true,
+      "fullWidthBorders": false
+    },
+    {
+      "width": 1360,
+      "height": 720,
+      "bottomGap": -383,
+      "scrollHeight": 1025,
+      "clientHeight": 642,
+      "pairedRowsAligned": true,
+      "contentTruncated": false,
+      "onlyPlus": true,
+      "fullWidthBorders": false
+    },
+    {
+      "width": 960,
+      "height": 960,
+      "bottomGap": -223,
+      "scrollHeight": 1105,
+      "clientHeight": 882,
+      "pairedRowsAligned": true,
+      "contentTruncated": false,
+      "onlyPlus": true,
+      "fullWidthBorders": false
+    }
+  ],
+  "plusClick": {
+    "path": "Calendar/2026-11.md",
+    "line": 10,
+    "expected": 10
+  },
+  "errors": "No errors captured."
+}
