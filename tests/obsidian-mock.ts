@@ -97,8 +97,19 @@ export class WorkspaceMock extends Events {
   async openLinkText(...args) { this.openedLinks.push(args); }
 }
 
+function installDomHelpers(doc) {
+  const prototype = doc.defaultView.Node.prototype;
+  if (!prototype.createEl) prototype.createEl = function(tag, options = {}) {
+    const node = this.ownerDocument.createElement(tag);
+    if (options.cls) node.className = options.cls;
+    if (options.text !== undefined) node.textContent = options.text;
+    this.appendChild(node);
+    return node;
+  };
+}
+
 export class AppMock {
-  constructor(doc) { this.doc = doc; this.vault = new VaultMock(); this.workspace = new WorkspaceMock(this); this.views = new Map(); this.commands = []; this.settingsTabs = []; }
+  constructor(doc) { installDomHelpers(doc); this.doc = doc; this.vault = new VaultMock(); this.workspace = new WorkspaceMock(this); this.views = new Map(); this.commands = []; this.settingsTabs = []; }
 }
 
 export class Modal {

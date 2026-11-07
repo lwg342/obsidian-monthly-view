@@ -8,10 +8,8 @@ import { MonthlyFiles } from './storage';
 export const VIEW_TYPE = 'monthly-markdown-calendar';
 
 function element<K extends keyof HTMLElementTagNameMap>(doc: Document, tag: K, cls = '', text?: string): HTMLElementTagNameMap[K] {
-  const node = doc.createElement(tag);
-  node.className = cls;
-  if (text !== undefined) node.textContent = text;
-  return node;
+  // A detached fragment preserves the owning window without touching the live DOM.
+  return doc.createDocumentFragment().createEl(tag, { cls, text });
 }
 
 function button(doc: Document, label: string, action: () => void, cls = ''): HTMLButtonElement {

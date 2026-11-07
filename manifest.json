@@ -1,7 +1,7 @@
 {
   "id": "monthly-markdown-calendar",
   "name": "Monthly Markdown Calendar",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "minAppVersion": "1.7.2",
   "description": "View a monthly calendar backed by local Markdown files and edit entries in the native editor.",
   "author": "wl342",

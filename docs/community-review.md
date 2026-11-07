@@ -26,3 +26,9 @@ asset attestations. Added English installation, usage and privacy guidance,
 and GitHub build attestations. Replaced CSS grid column-gap with equivalent
 gap syntax to avoid the scanner's multicolumn-compatibility warning.
 Review completion remains controlled by the community directory.
+
+## Source review follow-up — 0.1.7
+
+The directory recommended Obsidian's createEl helper. View elements now use
+a detached fragment's createEl method, retaining the correct owning document
+for popout windows. The test host implements that official DOM helper.
